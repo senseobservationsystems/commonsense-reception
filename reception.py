@@ -1,5 +1,5 @@
 """ 
-Copyright (©) [2012] Sense Observation Systems B.V.
+Copyright (C) [2012] Sense Observation Systems B.V.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -16,12 +16,12 @@ limitations under the License.
 
 from wsgiref.simple_server import make_server
 import threading
-import logging
+import logging_sense
 
 class Reception():
 
     def __init__(self, port):
-        self.logger = logging.Logger()
+        self.logger = logging_sense.Logger()
         self.__port = port
         
         try:
