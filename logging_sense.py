@@ -23,7 +23,7 @@ class Logger ():
     def __init__ (self):
         self.debug_logging = False
         self.error_logging = True
-        self.error_file = '../logs/error_log.sos.txt'
+        self.error_file = 'logs/error_log.sos.txt'
 
     def setErrorLoggingOn (self):
         self.error_logging = True
