@@ -24,6 +24,9 @@ class Logger ():
         self.debug_logging = False
         self.error_logging = True
         self.error_file = 'logs/error_log.sos.txt'
+        self.access_logging = True
+        self.access_file = 'logs/access_log.sos.txt'
+
 
     def setErrorLoggingOn (self):
         self.error_logging = True
@@ -42,6 +45,28 @@ class Logger ():
             try:
                 f = open(self.error_file, 'a')
                 f.write('{0} - {1} - {2}\n'.format(datetime.datetime.now(), self.error_prefix, string))
+                f.close()
+            except:
+                pass
+
+
+    def setAccessLoggingOn (self):
+        self.access_logging = True
+        
+    def setAccessLoggingOff (self):
+        self.access_logging = False
+        
+    def setAccessPrefix (self, s):
+        self.access_prefix = s
+        
+    def setAccessFile (self, f):
+        self.access_file = f
+        
+    def access (self, string): 
+        if self.access_logging == True:
+            try:
+                f = open(self.access_file, 'a')
+                f.write('{0} - {1} - {2}\n'.format(datetime.datetime.now(), self.access_prefix, string))
                 f.close()
             except:
                 pass
